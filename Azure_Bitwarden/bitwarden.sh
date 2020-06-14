@@ -96,7 +96,6 @@ while [ $REALTIME_BAK_CYCLE -gt 0 ]; do
         if [ -n "$FPTURL" ]; then
             curl $FTP_URL -u "$FTP_USER:$FTP_PASS" -T "/home/backup_daily/bitwarden_backup_daily_${TIME:0:8}.tar.gz"
             curl $FTP_URL -u "$FTP_USER:$FTP_PASS" -X "DELE bitwarden_backup_daily_$(date -d @$((`date +%s` +3600*8-86400*$DAILY_BAK_COUNTS )) "+%Y%m%d").tar.gz"
-            $(date -d @$((`date +%s` +3600*8-86400*$DAILY_BAK_COUNTS )) "+%Y%m%d")
         fi
     fi
     HOUR=`date "+%-H"`
