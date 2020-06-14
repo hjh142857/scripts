@@ -27,6 +27,7 @@
 * 如果需要自己注册完成后，禁止新用户注册，需要在`backup_realtime`中发现注册完成后的新备份之后，才能修改`SIGNUPS_ALLOWED`为false并重启容器
 * 用户Web页面登录页面完整打开一次需要流量为6MB左右，而免费的F1计划日限额为165MB，当日流量用完后会导致服务不可访问（403错误），且APP端可以进行绝大部分日常必须的功能（包括注册），所以可以根据自身需求考虑是否需要关闭用户Web界面
 * web管理员页面的网站为https://your_domain/admin，[Bitwarden_rs官方文档](https://github.com/dani-garcia/bitwarden_rs/wiki/Enabling-admin-page)推荐生成随机TOKEN的命令为`openssl rand -base64 48`
+* Azure免费的F1计划不能开启Always On功能，没有流量程序就会自动停止。请保持应用活跃。
 
 # Usage使用
 1. 登录Azure，https://portal.azure.com/
