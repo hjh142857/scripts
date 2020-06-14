@@ -43,5 +43,5 @@ mkdir /home/site/wwwroot/bitwarden
 wget -P /home/site/wwwroot/bitwarden/ https://raw.githubusercontent.com/hjh142857/scripts/master/Azure_Bitwarden/bitwarden.sh
 ```
 6. 侧边栏 设置Settings（容器配置Container settings）-> Docker Compose (预览版) -> Docker Hub -> 公开Public -> 连续部署Continuous Deployment（关off） -> 配置Configuration文本框中粘贴yml配置 - 保存Save
-    * 参考[Description说明](#Description说明)，按自己需求修改好docker-compose.yml中的环境变量配置，粘贴完yml配置后点击保存
+    * 参考[Description说明](#Description说明)，按自己需求修改好docker-compose.yml中的环境变量配置，粘贴完yml配置后点击保存，**环境变量配置完成必须删除所有中文注释，否则无法保存**
 7. 侧边栏 概述Overview -> 重新启动Restart
