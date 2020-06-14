@@ -8,7 +8,7 @@ services:
       - ${WEBAPP_STORAGE_HOME}/site/wwwroot/bitwarden:/home
     entrypoint: /home/bitwarden.sh
     command: ["/bitwarden_rs"]
-    environment:
+    environment:                                   # 环境变量配置完成必须删除所有中文注释，否则无法保存
       - WEBSOCKET_ENABLED=true                     # 启用websocket，用于推送密码变化
       - SIGNUPS_ALLOWED=true                       # 允许注册新用户，设置为false则禁止新注册
       - WEB_VAULT_ENABLED=true                     # 用户web页面，设置为false则关闭
