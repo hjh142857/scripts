@@ -16,7 +16,7 @@
 ```
 
 #### Backup & Restore备份与还原
-* 环境变量`REALTIME_BAK_CYCLE`为定时备份周期，该项必须设置成60的因数，否则可能会有BUG。若为0，则关闭所有备份功能。(eg. 若设置为12，则每小时的12/24/36/48/60分钟进行备份)
+* 环境变量`REALTIME_BAK_CYCLE`为定时备份周期，该项必须设置成60的因数，否则可能会有BUG。若为0，则关闭所有备份功能。(eg. 若设置为12，则每小时的第12/24/36/48/60分钟进行备份)
 * 定时备份的目录为`/home/site/wwwroot/bitwarden/backup_realtime`，保留24小时内的备份，可以通过[Usage使用](#Usage使用)中步骤5的Bash或Azure Web Service提供的FTP链接，都可以看到。
 * 环境变量`DAILY_BAK_COUNTS`为FTP远程备份的保留份数，远程FTP备份每天北京时间0点进行，同时也可以在`/home/site/wwwroot/bitwarden/backup_daily`中看到
 * 启动容器时会进行自动还原操作，优先还原`/home/site/wwwroot/bitwarden/backup_realtime`目录下的最新备份，若没有则检索`/home/site/wwwroot/bitwarden/backup_daily`目录下的最新备份进行还原
