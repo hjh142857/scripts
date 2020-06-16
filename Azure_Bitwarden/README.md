@@ -48,7 +48,7 @@ wget -P /home/site/wwwroot/bitwarden/ https://raw.githubusercontent.com/hjh14285
 6. 侧边栏 设置Settings（容器配置Container settings）-> Docker Compose (预览版) -> Docker Hub -> 公开Public -> 连续部署Continuous Deployment（关off） -> 配置Configuration文本框中粘贴yml配置 - 保存Save
     * 参考[Description说明](#Description说明)，按自己需求修改好docker-compose.yml中的环境变量配置，粘贴完yml配置后点击保存，**环境变量配置完成必须删除所有中文注释，否则无法保存**
 7. 侧边栏 概述Overview -> 重新启动Restart
-8. 如需更新镜像，按照步骤7重新启动即可，正常情况Azure会自动拉取最新的镜像。如果发现没有自动拉取最新镜像，可以在YML配置文件中修改image项目，指定引用的镜像版本，如把`image: bitwardenrs/server:alpine`改成`image: bitwardenrs/server:1.15.1-alpine`。建议选择alpine打包的系列以节省免费计划有限的资源配额。
+8. 如需更新镜像，保证两倍定时备份周期内没有提交密码更新或注册新用户，之后按照步骤7重新启动即可，正常情况Azure会自动拉取最新的镜像。如果发现没有自动拉取最新镜像，可以在YML配置文件中修改image项目，指定引用的镜像版本，如把`image: bitwardenrs/server:alpine`改成`image: bitwardenrs/server:1.15.1-alpine`。建议选择alpine打包的系列以节省免费计划有限的资源配额。
 
 # Tree目录结构
 ```
