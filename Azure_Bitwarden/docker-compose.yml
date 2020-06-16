@@ -13,6 +13,7 @@ services:
       - SIGNUPS_ALLOWED=true                       # 允许注册新用户，设置为false则禁止新注册
       - WEB_VAULT_ENABLED=true                     # 用户web页面，设置为false则关闭
       - ADMIN_TOKEN=your_web_admin_panel_password  # web管理员页面的密码，不设置则关闭管理面板，详细请阅读README
+      - DOMAIN=https://your_domain                 # 域名设置，免费F1计划域名格式为https://xxx.azurewebsites.net
       - REALTIME_BAK_CYCLE=10                      # 定时备份间隔分钟数，需要能被60整除，设置为0则关闭所有备份（包括FTP备份）
       - DAILY_BAK_COUNTS=5                         # FTP每日备份的保留份数，每天北京时间0时备份
       - FTP_URL=ftp://your_ftp_url/your_folder/    # FTP备份地址，必须以/结尾，否则会出现错误。不设置本项则禁用远程FTP备份
