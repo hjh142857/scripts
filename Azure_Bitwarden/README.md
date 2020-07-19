@@ -59,6 +59,8 @@ wget -P /home/site/wwwroot/bitwarden/ https://raw.githubusercontent.com/hjh14285
 ```
 
 # ChangeLog更新记录
+* 20200719
+   * 修复FTP无法同步的BUG
 * 20200616
    * 新增YML配置中`DOMAIN`环境变量，以解决Web Admin登录后自动跳转localhost的问题
    * 新增应用升级后更新镜像的相关说明
