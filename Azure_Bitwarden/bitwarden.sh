@@ -93,7 +93,7 @@ while [ $REALTIME_BAK_CYCLE -gt 0 ]; do
         mv /home/backup_realtime/bitwarden_backup_realtime_$TIME.tar.gz /home/backup_daily/bitwarden_backup_daily_${TIME:0:8}.tar.gz
         find /home/backup_daily/ -mtime +$((${DAILY_BAK_COUNTS}-1)) -delete
         daily_count=$((1440/$REALTIME_BAK_CYCLE-1))
-        if [ -n "$FPTURL" ]; then
+        if [ -n "$FTP_URL" ]; then
             curl $FTP_URL -u "$FTP_USER:$FTP_PASS" -T "/home/backup_daily/bitwarden_backup_daily_${TIME:0:8}.tar.gz"
             curl $FTP_URL -u "$FTP_USER:$FTP_PASS" -X "DELE bitwarden_backup_daily_$(date -d @$((`date +%s` +3600*8-86400*$DAILY_BAK_COUNTS )) "+%Y%m%d").tar.gz"
         fi
