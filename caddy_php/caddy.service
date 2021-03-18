@@ -1,6 +1,8 @@
 [Unit]
 Description=Caddy's service
 ConditionFileIsExecutable=/usr/local/bin/caddy
+After=network.target
+Wants=network.target
 
 [Service]
 StartLimitInterval=5
