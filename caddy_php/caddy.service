@@ -6,7 +6,7 @@ ConditionFileIsExecutable=/usr/local/bin/caddy
 StartLimitInterval=5
 StartLimitBurst=10
 ExecStart=/usr/local/bin/caddy "-agree=true" "-conf=/usr/local/bin/Caddyfile" "-email=abc@z.com"
-
+User=root
 Restart=always
 RestartSec=120
 EnvironmentFile=-/etc/sysconfig/caddy
