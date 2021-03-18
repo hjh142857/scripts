@@ -1,0 +1,6 @@
+your_domain.com {
+    gzip
+    tls abc@z.com
+    root /www
+    fastcgi / /run/php/php7.3-fpm.sock php
+}
