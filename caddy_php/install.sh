@@ -6,7 +6,7 @@ read -p "Please input your domain: " _domain
 
 # Install PHP7.3
 apt-get update
-apt-get install curl wget php7.3-sqlite3 php7.3-fpm php7.3-curl php7.3 sqlite3 php7.3-gd php7.3-mbstring php7.3-xml
+apt-get install curl wget php7.3-sqlite3 php7.3-fpm php7.3-curl php7.3 sqlite3 php7.3-gd php7.3-mbstring php7.3-xml -y
 systemctl enable php7.3-fpm
 systemctl restart php7.3-fpm
 
