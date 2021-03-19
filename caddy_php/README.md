@@ -3,7 +3,7 @@
 
 ## 使用
 ```
-wget -qO- git.io/JmrY6 | bash
+wget -qO- git.io/miniweb | bash -s your_domain.com
 ```
 
 参考的源码
