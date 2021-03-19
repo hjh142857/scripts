@@ -2,7 +2,7 @@
 
 # Define wwwroot & domain (You can change here)
 wwwroot="/www"
-read -p "Please input your domain: " _domain
+#read -p "Please input your domain: " _domain
 
 # Install PHP7.3
 apt-get update
@@ -19,7 +19,8 @@ mv caddy /usr/local/bin/
 mv caddy.service /etc/systemd/system/
 mv Caddyfile /usr/local/bin/
 sed -i "s#\/www#$wwwroot#g" /usr/local/bin/Caddyfile
-sed -i "s#your_domain.com#$_domain#g" /usr/local/bin/Caddyfile
+#sed -i "s#your_domain.com#$_domain#g" /usr/local/bin/Caddyfile
+sed -i "s#your_domain.com#$1#g" /usr/local/bin/Caddyfile
 systemctl enable caddy
 systemctl restart caddy
 
