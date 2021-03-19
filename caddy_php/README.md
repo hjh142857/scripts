@@ -3,7 +3,7 @@
 
 ## 使用
 ```
-wget -qO- --no-check-certificate https://github.com/hjh142857/scripts/raw/master/caddy_php/install.sh | bash
+wget -qO- git.io/JmrY6 | bash
 ```
 
 参考的源码
