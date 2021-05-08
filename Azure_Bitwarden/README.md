@@ -59,6 +59,8 @@ wget -P /home/site/wwwroot/bitwarden/ https://raw.githubusercontent.com/hjh14285
 ```
 
 # ChangeLog更新记录
+* 20210508
+   * 修复由于原Bitwarden_rs更名为vaultwarden导致的部署失败的问题
 * 20200719
    * 修复FTP无法同步的BUG
 * 20200616

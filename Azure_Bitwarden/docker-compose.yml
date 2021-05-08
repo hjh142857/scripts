@@ -2,12 +2,12 @@ version: '3'
 
 services:
   bitwarden:
-    image: bitwardenrs/server:alpine
+    image: vaultwarden/server:alpine
     restart: always
     volumes:
       - ${WEBAPP_STORAGE_HOME}/site/wwwroot/bitwarden:/home
-    entrypoint: /home/bitwarden.sh
-    command: ["/bitwarden_rs"]
+    entrypoint: ["/usr/bin/dumb-init","--"]
+    command: ["/home/bitwarden.sh"]
     environment:                                   # 环境变量配置完成必须删除所有中文注释，否则无法保存
       - WEBSOCKET_ENABLED=true                     # 启用websocket，用于推送密码变化
       - SIGNUPS_ALLOWED=true                       # 允许注册新用户，设置为false则禁止新注册
