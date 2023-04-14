@@ -1,9 +1,12 @@
 # Description说明
 本脚本和YML配置文件用于使用Azure的免费Web应用程序搭建自己的[开源密码管理程序Bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs/)服务端，并定时备份到Web应用自带的存储空间，也可以备份到远程FTP，且程序启动自动还原数据，方便使用。
 
-#### YML中环境变量说明
-前五项为Bitwarden_rs自带的环境变量，后五项为自动备份脚本所需的变量。需要实现Bitwarden_rs的其他个性化设置可以参考官方[ENV列表](https://github.com/dani-garcia/bitwarden_rs/blob/master/.env.template)
+#### YML的相关说明
+前六项为Bitwarden_rs自带的环境变量，后五项为自动备份脚本所需的变量。需要实现Bitwarden_rs的其他个性化设置可以参考官方[ENV列表](https://github.com/dani-garcia/bitwarden_rs/blob/master/.env.template)
+
+* Attention注意：使用1.26.0版本开始需要删去yml中此行`entrypoint: ["/usr/bin/dumb-init","--"]`
 ```
+* I_REALLY_WANT_VOLATILE_STORAGE=true        # 从1.25.1版本开始需要加上此环境变量，否则无法启动
 * WEBSOCKET_ENABLED=true                     # 启用websocket，用于推送密码变化
 * SIGNUPS_ALLOWED=true                       # 允许注册新用户，设置为false则禁止新注册
 * WEB_VAULT_ENABLED=true                     # 用户web页面，设置为false则关闭
@@ -59,6 +62,8 @@ wget -P /home/site/wwwroot/bitwarden/ https://raw.githubusercontent.com/hjh14285
 ```
 
 # ChangeLog更新记录
+* 20230414
+   * 修复1.25.1后版本无法启动的问题，已测试从1.25.1至1.28.1可以正常启动
 * 20210508
    * 修复由于原Bitwarden_rs更名为vaultwarden导致的部署失败的问题
 * 20200719
