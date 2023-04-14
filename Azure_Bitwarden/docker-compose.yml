@@ -6,9 +6,10 @@ services:
     restart: always
     volumes:
       - ${WEBAPP_STORAGE_HOME}/site/wwwroot/bitwarden:/home
-    entrypoint: ["/usr/bin/dumb-init","--"]
+    entrypoint: ["/usr/bin/dumb-init","--"]        # 从1.26.0版本开始需要删除此行entrypoint
     command: ["/home/bitwarden.sh"]
     environment:                                   # 环境变量配置完成必须删除所有中文注释，否则无法保存
+      - I_REALLY_WANT_VOLATILE_STORAGE=true        # 从1.25.1版本开始需要加上此环境变量，否则无法启动
       - WEBSOCKET_ENABLED=true                     # 启用websocket，用于推送密码变化
       - SIGNUPS_ALLOWED=true                       # 允许注册新用户，设置为false则禁止新注册
       - WEB_VAULT_ENABLED=true                     # 用户web页面，设置为false则关闭
